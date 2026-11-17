@@ -1,0 +1,17 @@
+mixin picture(name, alt, width, height, options = {})
+  - const lazy = options.lazy !== false
+  - const sizes = options.sizes || '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+  - const set = (ext) => [400, 800, 1200].map((w) => `/src/assets/images/${name}-${w}.${ext} ${w}w`).join(', ')
+  picture
+    source(type='image/avif' srcset=set('avif') sizes=sizes)
+    source(type='image/webp' srcset=set('webp') sizes=sizes)
+    img(
+      src=`/src/assets/images/${name}-800.jpg`
+      srcset=set('jpg')
+      sizes=sizes
+      alt=alt
+      width=width
+      height=height
+      loading=lazy ? 'lazy' : 'eager'
+      fetchpriority=lazy ? undefined : 'high'
+    )&attributes(attributes)

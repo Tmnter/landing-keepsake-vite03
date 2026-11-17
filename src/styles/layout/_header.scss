@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color('white');
+  border-bottom: 1px solid color('border');
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+  }
+
+  &__toggle {
+    padding: space('xs');
+    background: none;
+    border: 0;
+
+    @include focus-ring;
+
+    @include respond('md') {
+      display: none;
+    }
+  }
+
+  &__bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: color('text-dark');
+    box-shadow:
+      0 -7px 0 color('text-dark'),
+      0 7px 0 color('text-dark');
+  }
+}

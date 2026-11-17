@@ -1,0 +1,12 @@
+header.header
+  .container.header__inner
+    a.logo(href='#top' aria-label='Keepsake — на головну')
+      span.logo__letter K
+      span.logo__rest eepsake
+    button.header__toggle(type='button' aria-expanded='false' aria-controls='nav' aria-label='Відкрити меню')
+      span.header__bar
+    nav#nav.nav(aria-label='Головна навігація')
+      ul.nav__list
+        each link in navLinks
+          li.nav__item
+            a.nav__link(href=link.href class=link.active ? 'nav__link--active' : '' aria-current=link.active ? 'true' : undefined)= link.label

@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.footer {
+  padding-block: space('lg');
+  color: color('muted');
+  background: color('footer');
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: space('md');
+    align-items: center;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space('md');
+    justify-content: center;
+  }
+
+  &__link {
+    font-family: $font-heading;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: color('white');
+
+    &:hover {
+      color: color('accent');
+    }
+
+    @include focus-ring;
+  }
+
+  &__copy {
+    font-size: rem(12);
+  }
+}

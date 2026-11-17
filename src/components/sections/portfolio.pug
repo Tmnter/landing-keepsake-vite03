@@ -1,0 +1,11 @@
+section.section#portfolio(aria-labelledby='portfolio-title')
+  .container
+    h2#portfolio-title.section__title Наші роботи
+    ul.chips
+      each chip, index in chips
+        li
+          button.chip(type='button' data-filter=chip.id class=index === 0 ? 'chip--active' : '' aria-pressed=index === 0 ? 'true' : 'false')= chip.label
+    ul.grid
+      each item in cards
+        li.grid__item(data-category=item.category)
+          +card(item)

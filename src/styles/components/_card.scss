@@ -1,0 +1,72 @@
+@use '../abstracts' as *;
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+
+  &__badge {
+    position: absolute;
+    top: space('xs');
+    left: space('xs');
+    padding: 2px space('xs');
+    font-family: $font-heading;
+    font-size: rem(12);
+    text-transform: uppercase;
+    color: color('white');
+    background: color('text-dark');
+
+    &--new {
+      background: color('teal');
+    }
+
+    &--hot {
+      background: color('accent');
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: space('xs');
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: space('sm');
+    background: color('overlay');
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover &__overlay,
+  &:focus-within &__overlay {
+    opacity: 1;
+  }
+
+  &__category {
+    font-family: $font-heading;
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: color('teal');
+  }
+
+  &__title {
+    font-size: rem(18);
+    font-weight: 400;
+    color: color('white');
+  }
+
+  &__btn {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    color: color('white');
+    background: color('teal');
+    border-radius: 50%;
+
+    @include focus-ring;
+  }
+}

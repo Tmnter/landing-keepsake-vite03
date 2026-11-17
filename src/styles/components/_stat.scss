@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+.stats {
+  display: grid;
+  gap: space('md');
+  text-align: center;
+
+  @include respond('md') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+
+  &__value {
+    font-family: $font-heading;
+    font-weight: 300;
+    color: color('text-dark');
+
+    @include font-size(rem(38), rem(40), rem(48));
+  }
+
+  &__label {
+    font-size: rem(12);
+    color: color('muted');
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

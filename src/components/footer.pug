@@ -1,0 +1,10 @@
+footer.footer
+  .container.footer__inner
+    a.logo.logo--light(href='#top' aria-label='Keepsake — на початок')
+      span.logo__letter K
+      span.logo__rest eepsake
+    ul.footer__list
+      each link in navLinks
+        li
+          a.footer__link(href=link.href)= link.label
+    p.footer__copy © 2026 Keepsake. Усі права захищено.

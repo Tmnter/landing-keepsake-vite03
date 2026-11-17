@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+.section {
+  padding-block: space('lg');
+
+  @include respond('md') {
+    padding-block: space('xl');
+  }
+
+  &--light {
+    background: color('bg-light');
+  }
+
+  &__title {
+    display: flex;
+    gap: space('xs');
+    align-items: center;
+    margin-bottom: space('lg');
+    font-size: rem(18);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+
+    &::after {
+      width: 16px;
+      height: 2px;
+      content: '';
+      background: color('accent');
+    }
+  }
+}

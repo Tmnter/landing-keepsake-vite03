@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.cta {
+  padding-block: space('lg');
+  text-align: center;
+  background: color('accent');
+
+  &__title {
+    margin-bottom: space('md');
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: color('white');
+
+    @include font-size(rem(22), rem(24), rem(28));
+  }
+}

@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+// Медіазапит mobile-first
+@mixin respond($bp) {
+  @media (width >= map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+// Розмір шрифту для 375 / 768 / 1280
+@mixin font-size($mobile, $tablet, $desktop) {
+  font-size: $mobile;
+
+  @include respond('md') {
+    font-size: $tablet;
+  }
+
+  @include respond('xl') {
+    font-size: $desktop;
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+}

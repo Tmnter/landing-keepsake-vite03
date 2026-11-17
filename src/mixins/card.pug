@@ -1,0 +1,16 @@
+mixin card(item)
+  article.card
+    +picture(item.image, item.alt, 400, 300)
+    if item.badge
+      case item.badge
+        when 'new'
+          span.card__badge.card__badge--new Новинка
+        when 'hot'
+          span.card__badge.card__badge--hot Популярне
+        default
+          span.card__badge= item.badge
+    .card__overlay
+      p.card__category= item.categoryName
+      h3.card__title= item.title
+      a.card__btn(href='#contact' aria-label=`Дізнатися більше: ${item.title}`)
+        +icon('plus')

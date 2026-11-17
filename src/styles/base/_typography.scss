@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+body {
+  font-family: $font-body;
+  font-size: rem(14);
+  line-height: rem(22);
+  color: color('text');
+  background: color('white');
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-heading;
+  color: color('text-dark');
+  text-transform: uppercase;
+}
+
+a {
+  color: color('accent');
+  text-decoration: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 100;
+  padding: space('xs') space('sm');
+  color: color('white');
+  background: color('accent');
+
+  &:focus {
+    top: 0;
+  }
+}

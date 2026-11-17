@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+.nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: none;
+  padding: space('sm');
+  background: color('white');
+  border-bottom: 1px solid color('border');
+
+  @include respond('md') {
+    position: static;
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+
+  &--open {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: space('sm');
+
+    @include respond('md') {
+      flex-direction: row;
+      gap: space('md');
+    }
+  }
+
+  &__link {
+    font-family: $font-heading;
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: color('text-dark');
+    transition: color 0.2s;
+
+    @include respond('md') {
+      font-size: rem(13);
+    }
+
+    &:hover,
+    &--active {
+      color: color('accent');
+    }
+
+    @include focus-ring;
+  }
+}

@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.services {
+  display: grid;
+  gap: space('md');
+
+  @include respond('md') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service {
+  text-align: center;
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto space('sm');
+    color: color('accent');
+    background: color('white');
+    border-radius: 50%;
+  }
+
+  &__title {
+    margin-bottom: space('xs');
+    font-size: rem(16);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}

@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.testimonial {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+
+  &__text {
+    font-weight: 300;
+    line-height: 1.6;
+
+    @include font-size(rem(16), rem(19), rem(22));
+  }
+
+  &__author {
+    margin-top: space('sm');
+    font-family: $font-heading;
+    color: color('muted');
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

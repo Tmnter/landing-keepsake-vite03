@@ -1,0 +1,23 @@
+include ../mixins/picture.pug
+include ../mixins/icon.pug
+include ../mixins/card.pug
+include ../mixins/service.pug
+include ../mixins/stat.pug
+include ../data/nav.pug
+include ../data/cards.pug
+include ../data/services.pug
+include ../data/stats.pug
+
+doctype html
+html(lang='uk')
+  head
+    include ../includes/head.pug
+    block head
+  body
+    include ../includes/sprite.pug
+    a.skip-link(href='#main') Перейти до вмісту
+    include ../components/header.pug
+    main#main
+      block content
+    include ../components/footer.pug
+    block scripts

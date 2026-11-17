@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+.form {
+  display: grid;
+  gap: space('sm');
+  max-width: 560px;
+
+  &__field {
+    display: grid;
+    gap: 4px;
+  }
+
+  &__label {
+    font-family: $font-heading;
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: color('text-dark');
+  }
+
+  &__input {
+    padding: 10px 12px;
+    color: color('text-dark');
+    border: 1px solid color('border');
+    border-radius: 2px;
+
+    &:focus {
+      outline: 0;
+      border-color: color('teal');
+      box-shadow: 0 0 0 3px rgb(44 213 196 / 25%);
+    }
+
+    &--textarea {
+      resize: vertical;
+    }
+
+    &--error {
+      border-color: color('accent');
+    }
+  }
+
+  &__error {
+    font-size: rem(12);
+    color: color('accent');
+  }
+
+  &__success {
+    padding: space('xs') space('sm');
+    color: color('text-dark');
+    border-left: 3px solid color('teal');
+  }
+}

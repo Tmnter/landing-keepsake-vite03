@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as *;
+
+// px -> rem
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+// Колір з CSS-змінної
+@function color($name) {
+  @if not map.has-key($colors, $name) {
+    @error 'Невідомий колір: #{$name}';
+  }
+
+  @return var(--color-#{$name});
+}
+
+@function space($key) {
+  @return map.get($spacing, $key);
+}

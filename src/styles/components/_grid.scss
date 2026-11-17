@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.grid {
+  display: grid;
+  gap: space('sm');
+
+  @include respond('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item[hidden] {
+    display: none;
+  }
+}

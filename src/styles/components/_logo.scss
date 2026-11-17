@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.logo {
+  font-family: $font-logo;
+  font-size: rem(22);
+  font-weight: 700;
+  color: color('text-dark');
+
+  @include respond('md') {
+    font-size: rem(26);
+  }
+
+  &__letter {
+    font-size: rem(34);
+    color: color('accent');
+
+    @include respond('md') {
+      font-size: rem(40);
+    }
+  }
+
+  &--light {
+    color: color('white');
+  }
+}

@@ -1,0 +1,16 @@
+extends ../layouts/main.pug
+
+append head
+  meta(name='description' content='Keepsake — студія, що зберігає важливі моменти у візуальних історіях.')
+
+prepend scripts
+  script(type='module' src='/src/main.js')
+
+block content
+  include ../components/sections/hero.pug
+  include ../components/sections/portfolio.pug
+  include ../components/sections/services.pug
+  include ../components/sections/stats.pug
+  include ../components/sections/testimonial.pug
+  include ../components/sections/cta.pug
+  include ../components/sections/contact.pug

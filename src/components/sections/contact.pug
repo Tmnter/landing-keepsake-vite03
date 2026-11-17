@@ -1,0 +1,17 @@
+section.section#contact(aria-labelledby='contact-title')
+  .container
+    h2#contact-title.section__title Контакти
+    form.form(novalidate)
+      .form__field
+        label.form__label(for='name') Ім’я
+        input#name.form__input(type='text' name='name' autocomplete='name' required)
+        p.form__error(id='name-error' hidden) Вкажіть ім’я
+      .form__field
+        label.form__label(for='email') Email
+        input#email.form__input(type='email' name='email' autocomplete='email' required)
+        p.form__error(id='email-error' hidden) Вкажіть коректний email
+      .form__field
+        label.form__label(for='message') Повідомлення
+        textarea#message.form__input.form__input--textarea(name='message' rows='4')
+      button.button(type='submit') Надіслати
+      p.form__success(role='status' hidden) Дякуємо! Ми зв’яжемося з вами найближчим часом.
