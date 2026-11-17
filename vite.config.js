@@ -3,6 +3,8 @@ import vituum from 'vituum';
 import pug from '@vituum/vite-plugin-pug';
 
 export default defineConfig({
+  base: '/landing-keepsake-vite03/', // Точна назва твого репозиторію
+
   plugins: [vituum(), pug({ root: './src' })],
   css: {
     preprocessorOptions: {
